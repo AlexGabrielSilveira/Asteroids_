@@ -7,15 +7,19 @@ SOBRE O JOGO
 
 Bosses Serão baseados em signos do zodiaco
 
-Áries: Cordeiro
-Touro: Touro
 Leão: Leão
 Capricórnio: Cabra (ou Bode)
 Gêmeos: Pássaro (ou Beija-flor)
-Câncer: Caranguejo
 Virgem: Abelha
 Libra: Borboleta
 Escorpião: Escorpião
-fases Para casar com a quantidade de bosses o jogo irá ter 12 fases
 
+fases Para casar com a quantidade de bosses o jogo irá ter 6 fases
 
+Progresso do Jogo 
+
+Menu 0% | Loja 0%
+                
+Fase 01 - 50% | Fase 02 - 0%
+Fase 03 - 0%  | Fase 04 - 0%
+Fase 05 - 0%  | Fase 06 - 0%
