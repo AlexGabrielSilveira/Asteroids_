@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D player;
-    public float speed = 40;
+    public float speed = 12;
     private HealthBar healthBar;
     public AudioManager audioManager;
 
@@ -16,20 +16,13 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        float collisionLimiter = GameManager.Instance.GameWidth / 2;
-
-        if(transform.position.x  < -collisionLimiter) {
-            transform.position =  new Vector2(-collisionLimiter, transform.position.y);
-        }else if(transform.position.x > collisionLimiter) {
-            transform.position =  new Vector2(collisionLimiter, transform.position.y);
-        }
+        CollisionLimiter();
     }
     void FixedUpdate()
     {
-        var direction = Input.GetAxis("Horizontal");
-        var velocity = new Vector2(direction * speed, 0);
-        player.velocity = velocity;
+        PlayerSpeed();
     }
+
     public void TakeDamage(int damage) { 
         GameManager.Instance.PlayerHealth -= damage;
         healthBar.SetHealth(GameManager.Instance.PlayerHealth);
@@ -37,6 +30,20 @@ public class PlayerController : MonoBehaviour
     public void OnDie() {
         if(GameManager.Instance.PlayerHealth <= 0) {
             audioManager.DeathSound();
+        }
+    }
+    public void PlayerSpeed() {
+        var direction = Input.GetAxis("Horizontal");
+        var velocity = new Vector2(direction * speed, 0);
+        player.velocity = velocity;
+    }
+    public void CollisionLimiter() {
+        float collisionLimiter = GameManager.Instance.GameWidth / 2;
+
+        if(transform.position.x  < -collisionLimiter) {
+            transform.position =  new Vector2(-collisionLimiter, transform.position.y);
+        }else if(transform.position.x > collisionLimiter) {
+            transform.position =  new Vector2(collisionLimiter, transform.position.y);
         }
     }
 }

@@ -8,7 +8,6 @@ public class Bullet : MonoBehaviour
     public float bulletSpeed = 10f;
     public Rigidbody2D rb;
     public GameObject bulletPrefab;
-    // Start is called before the first frame update
     void Start()
     {
         rb.velocity = new Vector2(0, 1) * bulletSpeed;
