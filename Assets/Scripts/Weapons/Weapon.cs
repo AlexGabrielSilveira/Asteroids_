@@ -8,17 +8,17 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefab;
     private float cooldown = 0;
     private AudioManager audioManager;
-    [HideInInspector]public float FireRate;
-
-    protected Weapon(float fireRate) {
+    private float FireRate;
+    public Weapon(float fireRate) {
         FireRate = fireRate;
     }
+
     void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
     }
-    
-    protected void Shoot() {
+     
+    public void Shoot() {
         cooldown -= Time.deltaTime;
 
         if(cooldown < 0) {
@@ -31,4 +31,5 @@ public class Weapon : MonoBehaviour
             }
         }
     }
+    
 }

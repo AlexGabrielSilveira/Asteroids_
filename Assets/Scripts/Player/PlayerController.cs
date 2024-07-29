@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public void OnDie() {
         if(GameManager.Instance.PlayerHealth <= 0) {
             audioManager.DeathSound();
+            Time.timeScale = 0;
         }
     }
     public void PlayerSpeed() {
@@ -43,7 +45,8 @@ public class PlayerController : MonoBehaviour
         if(transform.position.x  < -collisionLimiter) {
             transform.position =  new Vector2(-collisionLimiter, transform.position.y);
         }else if(transform.position.x > collisionLimiter) {
-            transform.position =  new Vector2(collisionLimiter, transform.position.y);
+            transform.position = new Vector2(collisionLimiter, transform.position.y);
+
         }
     }
 }

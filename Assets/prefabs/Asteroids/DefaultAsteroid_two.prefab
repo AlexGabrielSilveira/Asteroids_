@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4074109271945020210}
   - component: {fileID: -7463713055764452094}
   m_Layer: 0
-  m_Name: asteroid_three
-  m_TagString: Untagged
+  m_Name: DefaultAsteroid_two
+  m_TagString: DefaultAsteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,4 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9165beaaf13d6bc4cbb5684ea0d59e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
   impactEffect: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
+  score: {fileID: 0}

@@ -23,6 +23,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip Death;
     public AudioClip Explosion;
     public AudioClip Shoot;
+    public AudioClip Damage;
 
 
     public static AudioManager Instance {get; private set;}
@@ -54,6 +55,9 @@ public class AudioManager : MonoBehaviour
     }
     public void ShootSound() {
         SFX.PlayOneShot(Shoot, SFXVolume);
+    }
+    public void DamageSound() {
+        SFX.PlayOneShot(Damage, SFXVolume);
     }
     public void SetMusicVolume(float volume) {
         Music.volume = volume;

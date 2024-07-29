@@ -31,10 +31,17 @@ public class AsteroidCollision : MonoBehaviour
                 Destroy(asteroids);
                 audioManager.ExplosionSound();
                 Instantiate(impactEffect, transform.position, transform.rotation);
-
+                audioManager.DamageSound();
                 playerController.TakeDamage(10);
                 playerController.OnDie();
             break;
+        }
+        if(gameObject.tag == "BadAsteroid") {
+                Destroy(asteroids);
+                audioManager.ExplosionSound();
+                playerController.TakeDamage(10);
+                audioManager.DamageSound();
+                score.ScoreAdd(-20);
         }
 
     }
