@@ -8,7 +8,7 @@ public class PlayButton : MonoBehaviour
     [SerializeField] private GameObject MenuStart;
     [SerializeField] private GameObject MenuOptions;
     public void Play() {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
     public void OpenSettingsMenu() {
         MenuStart.SetActive(false);

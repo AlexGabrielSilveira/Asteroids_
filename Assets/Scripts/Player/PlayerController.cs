@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -31,9 +33,16 @@ public class PlayerController : MonoBehaviour
     public void OnDie() {
         if(GameManager.Instance.PlayerHealth <= 0) {
             audioManager.DeathSound();
-            Time.timeScale = 0;
+            GameOver();
         }
     }
+
+    private void GameOver()
+    {
+        Time.timeScale = 0;
+        SceneManager.LoadScene(2);
+    }
+
     public void PlayerSpeed() {
         var direction = Input.GetAxis("Horizontal");
         var velocity = new Vector2(direction * speed, 0);
