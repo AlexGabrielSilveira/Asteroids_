@@ -41,14 +41,16 @@ public class AudioManager : MonoBehaviour
     }
     void Start() {
         SFXVolume = 0.35f;
-        MusicVolume = 0.15f;
+        MusicVolume = 0.06f;
         PlayBackgroundSound();
     }
 
     public void DeathSound( ) {
-        Music.Stop();
-        SFX.Stop(); 
-        SFX.PlayOneShot(Death, SFXVolume);
+        if(GameManager.Instance.isGameOver) {
+            Music.Stop();
+            SFX.Stop(); 
+            SFX.PlayOneShot(Death, SFXVolume);
+        }
     }
     public void ExplosionSound() {
         SFX.PlayOneShot(Explosion, SFXVolume);

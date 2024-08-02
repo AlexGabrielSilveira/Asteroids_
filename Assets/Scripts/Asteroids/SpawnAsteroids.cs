@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpawnAsteroids : MonoBehaviour
 {
     public List<GameObject> Asteroids;
-    public float interval = 1f;
+    private float interval = 0.55f;
     public float cooldown;
     
     void Update()
@@ -20,9 +20,10 @@ public class SpawnAsteroids : MonoBehaviour
             GameObject Asteroid = Asteroids[asteroidsIndex];
             Quaternion rotation = Asteroid.transform.rotation;
 
-            var X = Random.Range(-GameManager.Instance.GameWidth / 2, GameManager.Instance.GameWidth / 2);
-            var Y = GameManager.Instance.GameHeight / 2;
+            var X = GameManager.Instance.GameWidth / 2;
+            var Y = Random.Range(-GameManager.Instance.GameHeight / 2, GameManager.Instance.GameHeight / 2);
             Vector2 position = new Vector2(X, Y);
+            
 
             Instantiate(Asteroid, position, rotation);  
         }

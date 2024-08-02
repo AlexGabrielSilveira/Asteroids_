@@ -16,7 +16,7 @@ public class PlayButton : MonoBehaviour
 
     }
     public void CloseSettingsMenu() {
-    MenuStart.SetActive(true);
+        MenuStart.SetActive(true);
         MenuOptions.SetActive(false);
     }
     public void Quit() {

@@ -147,7 +147,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 0}
   bulletPrefab: {fileID: 8230866836031262347}
-  FireRate: 0
 --- !u!50 &6031755191190629932
 Rigidbody2D:
   serializedVersion: 4
@@ -174,7 +173,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!114 &-2767452847784963247
 MonoBehaviour:
   m_ObjectHideFlags: 0

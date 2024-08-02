@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class GameManager : MonoBehaviour
     public float GameHeight = 9;
 
     
-    public bool GameOver = false;
+    public bool isGameOver = false;
     public int Score = 0;
     public int PlayerHealth = 100;
 
@@ -22,5 +23,11 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
         
+    }
+    public void GameOver() {
+        Invoke("RestartGame", 1.5f);
+    }
+    void RestartGame() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

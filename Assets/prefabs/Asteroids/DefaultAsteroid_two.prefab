@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5150044481588752411}
   - component: {fileID: 4074109271945020210}
   - component: {fileID: -7463713055764452094}
+  - component: {fileID: 5868496031422736730}
   m_Layer: 0
   m_Name: DefaultAsteroid_two
   m_TagString: DefaultAsteroid
@@ -147,7 +148,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.7
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -174,3 +175,14 @@ MonoBehaviour:
   playerController: {fileID: 0}
   impactEffect: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
   score: {fileID: 0}
+--- !u!247 &5868496031422736730
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8428559661300416081}
+  m_Enabled: 1
+  m_Force: {x: -7, y: 0}
+  m_RelativeForce: {x: -6, y: 0}
+  m_Torque: 1

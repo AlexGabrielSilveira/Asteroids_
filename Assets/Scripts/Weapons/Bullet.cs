@@ -10,10 +10,10 @@ public class Bullet : MonoBehaviour
     public GameObject bulletPrefab;
     void Start()
     {
-        rb.velocity = new Vector2(0, 1) * bulletSpeed;
+        rb.velocity = new Vector2(1, 0) * bulletSpeed;
     }
     void Update() {
-        if(transform.position.y >= GameManager.Instance.GameHeight) {
+        if(transform.position.x >= GameManager.Instance.GameWidth / 2) {
             Destroy(bulletPrefab);
         };
     }

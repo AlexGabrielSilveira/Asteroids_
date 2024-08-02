@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,10 +18,6 @@ public class PlayerController : MonoBehaviour
         healthBar.SetMaxHealth(GameManager.Instance.PlayerHealth);
         audioManager = FindObjectOfType<AudioManager>();
     }
-    void Update()
-    {
-        CollisionLimiter();
-    }
     void FixedUpdate()
     {
         PlayerSpeed();
@@ -33,29 +30,20 @@ public class PlayerController : MonoBehaviour
     public void OnDie() {
         if(GameManager.Instance.PlayerHealth <= 0) {
             audioManager.DeathSound();
-            GameOver();
+            GameManager.Instance.GameOver();
         }
     }
 
-    private void GameOver()
-    {
-        Time.timeScale = 0;
-        SceneManager.LoadScene(2);
-    }
-
     public void PlayerSpeed() {
-        var direction = Input.GetAxis("Horizontal");
-        var velocity = new Vector2(direction * speed, 0);
+        var directionX = Input.GetAxis("Horizontal");
+        var directionY = Input.GetAxis("Vertical");
+        var velocity = new Vector2(directionX * speed, directionY * speed);
         player.velocity = velocity;
     }
-    public void CollisionLimiter() {
-        float collisionLimiter = GameManager.Instance.GameWidth / 2;
-
-        if(transform.position.x  < -collisionLimiter) {
-            transform.position =  new Vector2(-collisionLimiter, transform.position.y);
-        }else if(transform.position.x > collisionLimiter) {
-            transform.position = new Vector2(collisionLimiter, transform.position.y);
-
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.collider.tag == "BadAsteroid") {
+            TakeDamage(10);
         }
     }
 }

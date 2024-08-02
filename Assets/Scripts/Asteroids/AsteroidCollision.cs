@@ -14,6 +14,11 @@ public class AsteroidCollision : MonoBehaviour
         playerController = FindObjectOfType<PlayerController>();
         score = FindObjectOfType<Score>();
     }
+    void Update() {
+        if(transform.position.x <= -GameManager.Instance.GameWidth / 2 || transform.position.y >= GameManager.Instance.GameHeight / 2) {
+            Destroy(gameObject);
+        };
+    }
     void OnCollisionEnter2D(Collision2D other)
     {
         GameObject asteroids = gameObject;
@@ -35,14 +40,12 @@ public class AsteroidCollision : MonoBehaviour
                 playerController.TakeDamage(10);
                 playerController.OnDie();
             break;
-        }
-        if(gameObject.tag == "BadAsteroid") {
+            case "BadAsteroid":
                 Destroy(asteroids);
                 audioManager.ExplosionSound();
-                playerController.TakeDamage(10);
                 audioManager.DamageSound();
-                score.ScoreAdd(-20);
+                score.ScoreAdd(-10);
+            break;
         }
-
     }
 }
