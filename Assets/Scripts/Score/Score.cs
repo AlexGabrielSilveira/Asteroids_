@@ -6,7 +6,7 @@ using UnityEngine;
 public class Score : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    int currentScore = GameManager.Instance.Score;
+    int currentScore;
 
     public void ScoreAdd(int points) {
         currentScore += points;

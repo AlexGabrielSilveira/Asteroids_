@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -28,8 +27,7 @@ public class PlayerController : MonoBehaviour
         healthBar.SetHealth(GameManager.Instance.PlayerHealth);
     }
     public void OnDie() {
-        if(GameManager.Instance.PlayerHealth <= 0) {
-            audioManager.DeathSound();
+        if(GameManager.Instance.PlayerHealth <= 0) {;
             GameManager.Instance.GameOver();
         }
     }

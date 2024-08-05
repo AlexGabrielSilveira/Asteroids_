@@ -25,7 +25,8 @@ public class GameManager : MonoBehaviour
         
     }
     public void GameOver() {
-        Invoke("RestartGame", 1.5f);
+        AudioManager.Instance.DeathSound();
+        RestartGame();
     }
     void RestartGame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
