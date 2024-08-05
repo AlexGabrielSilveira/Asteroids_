@@ -1,6 +1,6 @@
 # Asteroids: The True Darkness
 
-![Asteroids: The True Darkness](https://imgur.com/a/asteroids-JRN6yHx)
+![Asteroids: The True Darkness](https://i.imgur.com/MIAkUf7.jpg)
 
 ## Sobre o Jogo
 
