@@ -1,4 +1,3 @@
-# Asteroids: The True Darkness
 
 ![Asteroids: The True Darkness](https://i.imgur.com/MIAkUf7.jpg)
 
